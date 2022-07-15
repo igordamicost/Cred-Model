@@ -11,14 +11,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
-import { DialogResultadoComponent } from './components/dialog-resultado/dialog-resultado.component';
+import { DialogResultComponent } from './components/dialog-result/dialog-result.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DialogResultadoComponent
+    DialogResultComponent
   ],
   imports: [
     BrowserModule,

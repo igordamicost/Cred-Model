@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="header">
+    <h1 id="elementeEl">Aqui você consegue a melhor proposta!</h1>
+  </div>
+  <div class="body">
+    <div>
+      <h1>
+        Está querendo simular um empréstimo?<br />
+        Com a gente você tem a sua <b>resposta em poucos minutos!</b> Preencha o
+        formulário e confira!
+      </h1>
+      <p>
+        O WeFin Cred é um sistema que permite ao usuário acompanhar o seu
+        crédito e o seu gasto. O usuário pode cadastrar o valor do seu crédito e
+        o valor do seu gasto. Use seu carro ou sua casa para ter as melhores
+        condições de crédito do mercado. Faça uma simulação e comprove.
+      </p>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Faça sua simulação</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form
+        (ngSubmit)="submeter()"
+        class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            floatLabel="always"
+          >
+            <mat-label>Insira o valor que deseja</mat-label>
+            <input
+              matInput
+              type="number"
+              class="example-right-align"
+              placeholder="0"
+            />
+            <span matPrefix>R$&nbsp;</span>
+          </mat-form-field>
+          <div id="envioButon">
+            <mat-form-field appearance="fill">
+              <mat-label>Escolha as parcelas</mat-label>
+              <mat-select matNativeControl required>
+                <mat-option value="12">12 Vezes</mat-option>
+                <mat-option value="24">24 Vezes</mat-option>
+                <mat-option value="36">36 Vezes</mat-option>
+                <mat-option value="48">48 Vezes</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Primary</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="simulado">
+
+  </div>
+</div>

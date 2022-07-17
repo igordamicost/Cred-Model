@@ -1,5 +1,5 @@
-<h1 mat-dialog-title>Você deseja finalizar sua solicitação?</h1>
-<div mat-dialog-content>
+<div>
+  <h2> Confira sua simulação</h2>
   <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
     <ng-container matColumnDef="item">
       <th mat-header-cell *matHeaderCellDef>Item</th>
@@ -21,8 +21,11 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   </table>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button mat-dialog-close (click)="confirmar()" cdkFocusInitial>Confirmar</button>
+  <div class="button">
+    <mat-checkbox [checked]="checked" class="example-margin"(change)="aceiteTermos()">Eu li e aceito os termos de uso</mat-checkbox>
+    <a mat-button (click)="openDialog()" target="_blank">Leia seu termo de compromisso!</a>
+    <button mat-raised-button [disabled]="disabled" color="primary" (click)="popup()">
+      Confirme sua Solicitação
+    </button>
+  </div>
 </div>

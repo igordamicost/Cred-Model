@@ -1,6 +1,5 @@
 export interface Simulacao {
-  nome: string;
-  sobrenome: string;
-  valor: number;
-  parcelas: number;
+  item: string;
+  cost: number;
+
 }

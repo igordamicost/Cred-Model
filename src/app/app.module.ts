@@ -12,13 +12,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import { DialogResultComponent } from './components/dialog-result/dialog-result.component';
+import { AfterSimulateComponent } from './components/after-simulate/after-simulate.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogAceiteTermos } from './components/dialog-aceite-termos.component.html/dialog-aceite-termos.component.html.component';
+import { TelaFinalizadaComponent } from './tela-finalizada/tela-finalizada.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DialogResultComponent
+    DialogResultComponent,
+    AfterSimulateComponent,
+    DialogAceiteTermos,
+    TelaFinalizadaComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,10 @@ import { DialogResultComponent } from './components/dialog-result/dialog-result.
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

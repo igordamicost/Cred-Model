@@ -8,13 +8,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   formSimulacao: any;
+  simulado: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
- public submeter():void {
-  this.formSimulacao.getRawValue();
+  public exibirSimulacao(){
+    this.simulado = !this.simulado
+  }
+  public submeter(): void {
+    this.formSimulacao.getRawValue();
   }
 }

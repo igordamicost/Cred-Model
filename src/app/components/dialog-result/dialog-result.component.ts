@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Simulacao } from 'src/app/interfaces/simulacao.interface';
 
 @Component({
   selector: 'app-dialog-result',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-result.component.scss']
 })
 export class DialogResultComponent implements OnInit {
+  displayedColumns: string[] = ['item', 'cost'];
+  transactions: Simulacao[] = [
+    { item: 'Nome', cost: 4 },
+    { item: 'Sobrenome', cost: 5 },
+    { item: 'Valor Solicitado', cost: 2 },
+    { item: 'Parcelas', cost: 4 },
+    { item: 'Valor da Parcela', cost: 25 },
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  totalFinanciado() {
+    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+  }
+  confirmar(){
+    
+  }
 }

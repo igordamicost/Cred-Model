@@ -1,0 +1,28 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  align-items: center;
+
+  h2 {
+    margin-top: 2em;
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em;
+    color: #3f51b5;
+    font-weight: bold;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+}

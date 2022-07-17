@@ -21,9 +21,7 @@
         <mat-card-title>Faça sua simulação</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <form
-        (ngSubmit)="submeter()"
-        class="example-form">
+        <form (ngSubmit)="submeter()" class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome</mat-label>
             <input matInput />
@@ -47,7 +45,6 @@
             />
             <span matPrefix>R$&nbsp;</span>
           </mat-form-field>
-          <div id="envioButon">
             <mat-form-field appearance="fill">
               <mat-label>Escolha as parcelas</mat-label>
               <mat-select matNativeControl required>
@@ -57,13 +54,14 @@
                 <mat-option value="48">48 Vezes</mat-option>
               </mat-select>
             </mat-form-field>
-            <button mat-raised-button color="primary">Simular Emprestimo</button>
-          </div>
         </form>
+        <div class="envioButton">
+          <button mat-raised-button color="primary" (click)="exibirSimulacao()">
+            Simular empréstimo
+          </button>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="simulado">
-
-  </div>
+  <app-after-simulate *ngIf="simulado" class="simulado"></app-after-simulate>
 </div>

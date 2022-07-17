@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Simulacao } from 'src/app/interfaces/simulacao.interface';
-import {MatDialog} from '@angular/material/dialog';
+import { DadosSimulacao, dadosteste } from 'src/app/interfaces/simulacao.interface';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogAceiteTermos } from '../dialog-aceite-termos.component.html/dialog-aceite-termos.component.html.component';
 import { DialogResultComponent } from '../dialog-result/dialog-result.component';
 
@@ -13,7 +13,7 @@ export class AfterSimulateComponent implements OnInit {
   disabled = true;
   checked = false;
   displayedColumns: string[] = ['item', 'cost'];
-  transactions: Simulacao[] = [
+  transactions: dadosteste[] = [
     { item: 'Nome', cost: 4 },
     { item: 'Sobrenome', cost: 5 },
     { item: 'Valor Solicitado', cost: 2 },
@@ -26,19 +26,24 @@ export class AfterSimulateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.pegarValores();
   }
+
   totalFinanciado() {
     return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
   }
+
   popup() {
     const confimRef = this.dialog.open(DialogResultComponent);
     confimRef.afterClosed().subscribe(result => {
 
     });
   }
+
   aceiteTermos() {
     this.disabled = !this.disabled;
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogAceiteTermos);
 
@@ -48,6 +53,14 @@ export class AfterSimulateComponent implements OnInit {
         this.checked = true;
       }
     });
+  }
+
+  pegarValores() {
+    // const valor = localStorage.getItem('valor');
+    // const parcelas = localStorage.getItem('parcelas');
+    // const nome = localStorage.getItem('nome');
+    // const sobrenome = localStorage.getItem('sobrenome');
+
   }
 }
 

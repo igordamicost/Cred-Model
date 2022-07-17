@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Simulacao } from 'src/app/interfaces/simulacao.interface';
+import { DadosSimulacao, dadosteste } from 'src/app/interfaces/simulacao.interface';
 
 @Component({
   selector: 'app-dialog-result',
@@ -8,7 +8,7 @@ import { Simulacao } from 'src/app/interfaces/simulacao.interface';
 })
 export class DialogResultComponent implements OnInit {
   displayedColumns: string[] = ['item', 'cost'];
-  transactions: Simulacao[] = [
+  transactions: dadosteste[] = [
     { item: 'Nome', cost: 4 },
     { item: 'Sobrenome', cost: 5 },
     { item: 'Valor Solicitado', cost: 2 },
@@ -24,6 +24,6 @@ export class DialogResultComponent implements OnInit {
     return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
   }
   confirmar(){
-    
+
   }
 }

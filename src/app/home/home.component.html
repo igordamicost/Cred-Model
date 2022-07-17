@@ -13,7 +13,8 @@
         O WeFin Cred é um sistema que permite ao usuário acompanhar o seu
         crédito e o seu gasto. O usuário pode cadastrar o valor do seu crédito e
         o valor do seu gasto. Use seu carro ou sua casa para ter as melhores
-        condições de crédito do mercado. Faça uma simulação e comprove.
+        condições de crédito do mercado. Você consegue até 100.000 R$ para pagar
+        em até 48 mesês. Faça uma simulação e comprove.
       </p>
     </div>
     <mat-card class="example-card">
@@ -21,11 +22,7 @@
         <mat-card-title>Faça sua simulação</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <form
-          #f="ngForm"
-          (ngSubmit)="onSubmit(f)"
-          class="example-form"
-        >
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome</mat-label>
             <input
@@ -57,7 +54,7 @@
               ngModel
               name="valor"
               min="1000"
-              max="10000"
+              max="100000"
               type="number"
               class="example-right-align"
               placeholder="Digite o valor que deseja"
@@ -65,28 +62,29 @@
             <span matPrefix>R$&nbsp;</span>
           </mat-form-field>
           <mat-form-field
-          class="example-full-width"
-          appearance="fill"
-          floatLabel="always"
-        >
-          <mat-label>Insira as parcelas</mat-label>
-          <input
-            matInput
-            ngModel
-            name="parcelas"
-            min="12"
-            max="48"
-            type="number"
-            class="example-right-align"
-            placeholder="Insira suas parcelas"
-          />
-          <span matPrefix>&nbsp;</span>
-        </mat-form-field>
+            class="example-full-width"
+            appearance="fill"
+            floatLabel="always"
+          >
+            <mat-label>Insira as parcelas</mat-label>
+            <input
+              matInput
+              ngModel
+              name="parcelas"
+              min="12"
+              max="48"
+              type="number"
+              class="example-right-align"
+              placeholder="Insira suas parcelas"
+            />
+            <span matPrefix>&nbsp;</span>
+          </mat-form-field>
 
-          <button mat-raised-button color="primary" type="submit">Simular empréstimo</button>
+          <button mat-raised-button color="primary" type="submit">
+            Simular empréstimo
+          </button>
         </form>
-        <div class="envioButton">
-        </div>
+        <div class="envioButton"></div>
       </mat-card-content>
     </mat-card>
   </div>

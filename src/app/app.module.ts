@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogAceiteTermos } from './components/dialog-aceite-termos.component.html/dialog-aceite-termos.component.html.component';
 import { TelaFinalizadaComponent } from './tela-finalizada/tela-finalizada.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,8 +45,9 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatDialogModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

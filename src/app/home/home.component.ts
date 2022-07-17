@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Inject, OnInit, NgModule } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  FormArray,
+  Validators
+} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +14,34 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  formSimulacao: any;
-  simulado: boolean = false;
 
-  constructor() { }
+  onSubmit(form: any) {
+    if(form.value.nome === '' || form.value.sobrenome === '') {
+      alert('Insira seu Nome e Sobrenome');
+    }
+    if (form.value.parcelas < 12 || form.value.parcelas > 48) {
+      alert('Parcelas invalidas. Escolher entre 12 e 48');
+    }
+    if (form.value.valor < 1000 || form.value.valor >= 100000) {
+      alert('Emprestamos apenas entre 1000 e 100000 Reais');
+    } else {
+      console.log(form.value);
+    this.simularEmprestimo()
+    }
+  }
+
+  simulado: boolean = false;
+  public nome: any;
+
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
-  public exibirSimulacao(){
-    this.simulado = !this.simulado
+  public simularEmprestimo() {
+    this.simulado = !this.simulado;
   }
   public submeter(): void {
-    this.formSimulacao.getRawValue();
   }
 }

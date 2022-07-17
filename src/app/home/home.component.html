@@ -21,14 +21,29 @@
         <mat-card-title>Faça sua simulação</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <form (ngSubmit)="submeter()" class="example-form">
+        <form
+          #f="ngForm"
+          (ngSubmit)="onSubmit(f)"
+          class="example-form"
+        >
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome</mat-label>
-            <input matInput />
+            <input
+              matInput
+              ngModel
+              type="text"
+              name="nome"
+              placeholder="Digite seu Primeiro Nome"
+            />
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Sobrenome</mat-label>
-            <input matInput />
+            <input
+              matInput
+              ngModel
+              name="sobrenome"
+              placeholder="Digite seu Sobrenome"
+            />
           </mat-form-field>
 
           <mat-form-field
@@ -39,26 +54,38 @@
             <mat-label>Insira o valor que deseja</mat-label>
             <input
               matInput
+              ngModel
+              name="valor"
+              min="1000"
+              max="10000"
               type="number"
               class="example-right-align"
-              placeholder="0"
+              placeholder="Digite o valor que deseja"
             />
             <span matPrefix>R$&nbsp;</span>
           </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Escolha as parcelas</mat-label>
-              <mat-select matNativeControl required>
-                <mat-option value="12">12 Vezes</mat-option>
-                <mat-option value="24">24 Vezes</mat-option>
-                <mat-option value="36">36 Vezes</mat-option>
-                <mat-option value="48">48 Vezes</mat-option>
-              </mat-select>
-            </mat-form-field>
+          <mat-form-field
+          class="example-full-width"
+          appearance="fill"
+          floatLabel="always"
+        >
+          <mat-label>Insira as parcelas</mat-label>
+          <input
+            matInput
+            ngModel
+            name="parcelas"
+            min="12"
+            max="48"
+            type="number"
+            class="example-right-align"
+            placeholder="Insira suas parcelas"
+          />
+          <span matPrefix>&nbsp;</span>
+        </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit">Simular empréstimo</button>
         </form>
         <div class="envioButton">
-          <button mat-raised-button color="primary" (click)="exibirSimulacao()">
-            Simular empréstimo
-          </button>
         </div>
       </mat-card-content>
     </mat-card>

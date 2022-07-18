@@ -44,7 +44,17 @@ export class HomeComponent implements OnInit {
   }
 
   public simularEmprestimo(form: any) {
-    dadosSimulados = this.saveSimulacao.saveSimulacao(form.value)
+    dadosSimulados = this.saveSimulacao.saveSimulacao(form.value),
+    {
+      dadosSimulados: {
+        nome: dadosSimulados.nome,
+        sobrenome: dadosSimulados.sobrenome,
+        valorTotal: dadosSimulados.valorTotal,
+        quantidadeParcelas: dadosSimulados.quantidadeParcelas,
+        parcelas: dadosSimulados.valorParcela,
+        valorTotalParcelas: dadosSimulados.valorTotalParcelas
+      }
+    }
     console.log(dadosSimulados)
     this.saveSimulacao.pegarValores(dadosSimulados, true)
     this.simulado = true;

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DadosSimulacao, DadosSimulados, dadosTeste } from 'src/app/interfaces/simulacao.interface';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogAceiteTermos } from '../dialog-aceite-termos.component.html/dialog-aceite-termos.component.html.component';
 import { DialogResultComponent } from '../dialog-result/dialog-result.component';
 import { Simulacao } from 'src/app/services/simulacao.service';
@@ -25,6 +25,7 @@ export class AfterSimulateComponent implements OnInit {
 
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public dadosSimulados: any,
     private saveSimulacao: Simulacao,
     public dialog: MatDialog
 
@@ -59,12 +60,7 @@ export class AfterSimulateComponent implements OnInit {
     });
   }
   montarTabla() {
-    this.transactions[0].cost = retornoDados.nome
-    this.transactions[1].cost = retornoDados.sobrenome
-    this.transactions[2].cost = retornoDados.valorTotal
-    this.transactions[3].cost = retornoDados.quantidadeParcelas
-    this.transactions[4].cost = retornoDados.valorParcela
-    this.transactions[5].cost = retornoDados.valorTotalParcelas
+    console.log(this.dadosSimulados,'DEU CERTO FDP')
   }
 }
 

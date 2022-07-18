@@ -1,36 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { DadosSimulacao, dadosteste } from 'src/app/interfaces/simulacao.interface';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DadosSimulacao, DadosSimulados, dadosTeste } from 'src/app/interfaces/simulacao.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAceiteTermos } from '../dialog-aceite-termos.component.html/dialog-aceite-termos.component.html.component';
 import { DialogResultComponent } from '../dialog-result/dialog-result.component';
-
+import { Simulacao } from 'src/app/services/simulacao.service';
+let retornoDados: DadosSimulados;
 @Component({
   selector: 'app-after-simulate',
   templateUrl: './after-simulate.component.html',
   styleUrls: ['./after-simulate.component.scss']
 })
+
 export class AfterSimulateComponent implements OnInit {
   disabled = true;
   checked = false;
-  displayedColumns: string[] = ['item', 'cost'];
-  transactions: dadosteste[] = [
-    { item: 'Nome', cost: 4 },
-    { item: 'Sobrenome', cost: 5 },
-    { item: 'Valor Solicitado', cost: 2 },
-    { item: 'Parcelas', cost: 4 },
-    { item: 'Valor da Parcela', cost: 25 },
+  transactions: dadosTeste[] = [
+    { item: 'nome', cost: '' },
+    { item: 'sobrenome', cost: '' },
+    { item: 'quantidadeParcelas', cost: '' },
+    { item: 'Parcelas', cost: '' },
+    { item: 'Valor da Parcela', cost: '' },
+    { item: 'Valor Total', cost: '' }
   ];
 
+
   constructor(
+    private saveSimulacao: Simulacao,
     public dialog: MatDialog
+
   ) { }
 
   ngOnInit(): void {
-    this.pegarValores();
-  }
-
-  totalFinanciado() {
-    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+    debugger
+    retornoDados = this.saveSimulacao.pegarValores(retornoDados, false)
+    this.montarTabla()
+    console.log(retornoDados)
   }
 
   popup() {
@@ -54,15 +58,13 @@ export class AfterSimulateComponent implements OnInit {
       }
     });
   }
-
-  pegarValores() {
-    // const valor = localStorage.getItem('valor');
-    // const parcelas = localStorage.getItem('parcelas');
-    // const nome = localStorage.getItem('nome');
-    // const sobrenome = localStorage.getItem('sobrenome');
-
+  montarTabla() {
+    this.transactions[0].cost = retornoDados.nome
+    this.transactions[1].cost = retornoDados.sobrenome
+    this.transactions[2].cost = retornoDados.valorTotal
+    this.transactions[3].cost = retornoDados.quantidadeParcelas
+    this.transactions[4].cost = retornoDados.valorParcela
+    this.transactions[5].cost = retornoDados.valorTotalParcelas
   }
 }
-
-
 

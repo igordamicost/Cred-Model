@@ -2,7 +2,7 @@ export interface DadosSimulacao {
   nome: string;
   sobrenome: string;
   quantidadeParcelas: number;
-  valorParcela: number;
+  valorTotal: number;
 
 }
 
@@ -15,8 +15,8 @@ export interface DadosSimulados {
   valorTotalParcelas: number;
 }
 
-export interface dadosteste {
+export interface dadosTeste {
   item:string;
-  cost:number;
+  cost:any;
 
 }

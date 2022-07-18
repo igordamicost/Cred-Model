@@ -52,7 +52,7 @@
             <input
               matInput
               ngModel
-              name="valor"
+              name="valorTotal"
               min="1000"
               max="100000"
               type="number"
@@ -70,7 +70,7 @@
             <input
               matInput
               ngModel
-              name="parcelas"
+              name="quantidadeParcelas"
               min="12"
               max="48"
               type="number"
@@ -88,5 +88,5 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <app-after-simulate *ngIf="simulado" class="simulado"></app-after-simulate>
+  <app-after-simulate ngValue="dadosSimulados" *ngIf="simulado" class="simulado"></app-after-simulate>
 </div>

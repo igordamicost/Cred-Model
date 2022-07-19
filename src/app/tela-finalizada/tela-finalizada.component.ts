@@ -17,9 +17,6 @@ export class TelaFinalizadaComponent implements OnInit {
 
   ngOnInit(): void {
    this.dadosSimulados = this.objectSalvo.envioObj('', false);
-   console.log(this.dadosSimulados, 'chegou fdp');
-
-
   }
   popup(){
     this.router.navigate(['Home']);

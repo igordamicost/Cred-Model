@@ -1,6 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ObjectSimulado } from '../services/creditoContratado.sevice';
+
 
 @Component({
   selector: 'app-tela-finalizada',
@@ -8,15 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./tela-finalizada.component.scss']
 })
 export class TelaFinalizadaComponent implements OnInit {
-
+  dadosSimulados: any;
   constructor(
-    private router: Router
+   private objectSalvo: ObjectSimulado,
+   private router: Router
   ) { }
 
   ngOnInit(): void {
-    debugger
-    const nav = this.router.getCurrentNavigation();
-    console.log(nav?.extras.queryParams, 'nav');
-  }
+   this.dadosSimulados = this.objectSalvo.envioObj('', false);
+   console.log(this.dadosSimulados, 'chegou fdp');
 
+
+  }
+  popup(){
+    this.router.navigate(['Home']);
+  }
 }

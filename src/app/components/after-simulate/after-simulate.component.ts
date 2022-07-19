@@ -47,7 +47,9 @@ export class AfterSimulateComponent implements OnInit {
 
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   popup() {
     this.dialog.open(DialogResultComponent, {

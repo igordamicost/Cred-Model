@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject,Injectable, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -7,15 +7,21 @@ import { Router } from '@angular/router';
   templateUrl: './dialog-result.component.html',
   styleUrls: ['./dialog-result.component.scss'],
 })
+@Injectable({
+  providedIn: 'root',
+})
 export class DialogResultComponent implements OnInit {
   constructor(
+
     @Inject(MAT_DIALOG_DATA) public dados: any,
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
   confirmar() {
-    debugger
-    this.router.navigate(['TelaFinalizada'],{queryParams: this.dados});
+    this.router.navigate(['TelaFinalizada']);
+
   }
 }

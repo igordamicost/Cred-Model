@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DadosSimulados } from '../interfaces/simulacao.interface';
 import { Simulacao } from '../services/simulacao.service';
+import { ObjectSimulado } from '../services/creditoContratado.sevice';
 
 let dadosSimulados: DadosSimulados;
 @Component({
@@ -29,7 +30,10 @@ export class HomeComponent implements OnInit {
 
   public simulado: boolean = false;
 
-  constructor(private saveSimulacao: Simulacao) {}
+  constructor(
+    private saveSimulacao: Simulacao,
+    private objectSalvo: ObjectSimulado
+  ) {}
   @Input() dadosEnviados: DadosSimulados[] = [];
   @Input() nome: string = '';
   @Input() sobrenome: string = '';
@@ -51,5 +55,6 @@ export class HomeComponent implements OnInit {
       .toString();
     this.quantidadeParcelas = dadosSimulados.quantidadeParcelas.toString();
     this.simulado = true;
+    this.objectSalvo.envioObj(dadosSimulados, true);
   }
 }

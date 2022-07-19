@@ -1,30 +1,54 @@
 <div>
-  <h2> Confira sua simulação</h2>
-  <!-- <table mat-table class="mat-elevation-z8">
-    <ng-container matColumnDef="item">
-      <th mat-header-cell *matHeaderCellDef>Item</th>
-      <td mat-cell *matCellDef="let transaction">{{ transaction.item }}</td>
-      <td mat-footer-cell *matFooterCellDef>Total</td>
-    </ng-container>
+  <h2>Confira sua simulação</h2>
 
-    <ng-container matColumnDef="cost">
-      <th mat-header-cell *matHeaderCellDef>Dados</th>
-      <td mat-cell *matCellDef="let transaction">
-        {{ transaction.value | currency }}
-      </td>
-      <td mat-cell *matCellDef="let transaction">
-        {{ transaction.cost | currency }}
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-  </table> -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nome Item</th>
+        <th>Simulado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nome Completo</td>
+        <td>{{ this.nomeRetorno }} {{ this.sobrenomeRetorno }}</td>
+      </tr>
+      <tr>
+        <td>Valor Emprestado</td>
+        <td>{{ this.valorTotalRetorno }}</td>
+      </tr>
+      <tr>
+        <td>Quantidade de Parcelas</td>
+        <td>{{ this.quantidadeParcelasRetorno }}</td>
+      </tr>
+      <tr>
+        <td>Valor das Parcelas</td>
+        <td>{{ this.valorParcelaRetorno }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>{{ this.valorTotalparcelasRetorno }}</td>
+      </tr>
+    </tfoot>
+  </table>
   <div class="button">
-    <mat-checkbox [checked]="checked" class="example-margin"(change)="aceiteTermos()">Eu li e aceito os termos de uso</mat-checkbox>
-    <a mat-button (click)="openDialog()" target="_blank">Leia seu termo de compromisso!</a>
-    <button mat-raised-button [disabled]="disabled" color="primary" (click)="popup()">
+    <mat-checkbox
+      [checked]="checked"
+      class="example-margin"
+      (change)="aceiteTermos()"
+      >Eu li e aceito os termos de uso</mat-checkbox
+    >
+    <a mat-button (click)="openDialog()" target="_blank"
+      >Leia seu termo de compromisso!</a
+    >
+    <button
+      mat-raised-button
+      [disabled]="disabled"
+      color="primary"
+      (click)="popup()"
+    >
       Confirme sua Solicitação
     </button>
   </div>

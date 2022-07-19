@@ -10,8 +10,8 @@ export function calculadoraparcela(dadosSimulacao: DadosSimulacao) {
 
   let valorTotal = dadosSimulacao.valorTotal;
   let quantidadeParcelas = dadosSimulacao.quantidadeParcelas;
-  let valorParcela = valorTotal / quantidadeParcelas;
   let valorTotalParcelas = valorTotal + (valorTotal * juros);
+  let valorParcela = valorTotalParcelas / quantidadeParcelas;
   let dadosSimulados: DadosSimulados = {
     nome: dadosSimulacao.nome,
     sobrenome: dadosSimulacao.sobrenome,

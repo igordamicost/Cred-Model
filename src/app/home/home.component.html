@@ -10,11 +10,11 @@
         formulário e confira!
       </h1>
       <p>
-        O Cred é um sistema que permite ao usuário acompanhar o seu
-        crédito e o seu gasto. O usuário pode cadastrar o valor do seu crédito e
-        o valor do seu gasto. Use seu carro ou sua casa para ter as melhores
-        condições de crédito do mercado. Você consegue até 100.000 R$ para pagar
-        em até 48 mesês. Faça uma simulação e comprove.
+        O Cred é um sistema que permite ao usuário acompanhar o seu crédito e o
+        seu gasto. O usuário pode cadastrar o valor do seu crédito e o valor do
+        seu gasto. Use seu carro ou sua casa para ter as melhores condições de
+        crédito do mercado. Você consegue até 100.000 R$ para pagar em até 48
+        mesês. Faça uma simulação e comprove.
       </p>
     </div>
     <mat-card class="example-card">
@@ -88,5 +88,15 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <app-after-simulate ngValue="dadosSimulados" *ngIf="simulado" class="simulado"></app-after-simulate>
+  <app-after-simulate
+    nome={{this.nome}}
+    sobrenome={{this.sobrenome}}
+    valorTotal={{this.valorTotal}}
+    quantidadeParcelas={{this.quantidadeParcelas}}
+    valorParcela={{this.valorParcela}}
+    valorTotalParcelas={{this.valorTotalParcelas}}
+    ngValue="dadosSimulados"
+    *ngIf="simulado"
+    class="simulado"
+  ></app-after-simulate>
 </div>

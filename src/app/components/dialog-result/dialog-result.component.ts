@@ -1,29 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { DadosSimulacao, dadosTeste } from 'src/app/interfaces/simulacao.interface';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-result',
   templateUrl: './dialog-result.component.html',
-  styleUrls: ['./dialog-result.component.scss']
+  styleUrls: ['./dialog-result.component.scss'],
 })
 export class DialogResultComponent implements OnInit {
-  displayedColumns: string[] = ['item', 'cost'];
-  transactions: dadosTeste[] = [
-    { item: 'Nome', cost: 4 },
-    { item: 'Sobrenome', cost: 5 },
-    { item: 'Valor Solicitado', cost: 2 },
-    { item: 'Parcelas', cost: 4 },
-    { item: 'Valor da Parcela', cost: 25 },
-  ];
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public dados: any,
+    private router: Router
+  ) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  totalFinanciado() {
-    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
-  }
-  confirmar(){
-
+  ngOnInit() {}
+  confirmar() {
+    debugger
+    this.router.navigate(['TelaFinalizada'],{queryParams: this.dados});
   }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tela-finalizada',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaFinalizadaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    debugger
+    const nav = this.router.getCurrentNavigation();
+    console.log(nav?.extras.queryParams, 'nav');
   }
 
 }

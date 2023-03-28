@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogAceiteTermos.Component.HtmlComponent } from './dialog-aceite-termos.component.html.component';
+import { DialogAceiteTermos } from './dialog-aceite-termos.component.html.component';
 
 describe('DialogAceiteTermos.Component.HtmlComponent', () => {
-  let component: DialogAceiteTermos.Component.HtmlComponent;
-  let fixture: ComponentFixture<DialogAceiteTermos.Component.HtmlComponent>;
+  let component: DialogAceiteTermos
+  let fixture: ComponentFixture<DialogAceiteTermos>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogAceiteTermos.Component.HtmlComponent ]
+      declarations: [ DialogAceiteTermos ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DialogAceiteTermos.Component.HtmlComponent);
+    fixture = TestBed.createComponent(DialogAceiteTermos);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

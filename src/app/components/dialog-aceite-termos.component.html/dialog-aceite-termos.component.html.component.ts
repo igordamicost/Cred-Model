@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAceiteTermos implements OnInit {
   result: boolean = false;
+  static HtmlComponent: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  aceiteTermos(){
+  aceiteTermos() {
     return this.result = true;
   }
 }

@@ -2,17 +2,17 @@ table {
   width: 100%;
   text-transform: uppercase;
   text-align: left;
-  font-family:'Roboto Slab', serif ;
+  font-family: "Roboto Slab", serif;
   border: 1px solid #3f51b5;
-  thead{
+  thead {
     font-weight: bold;
   }
-  tbody{
-    td::nth-child(2){
+  tbody {
+    td::nth-child(2) {
       font-weight: bold;
     }
   }
-  tfoot{
+  tfoot {
     font-weight: bold;
   }
 }

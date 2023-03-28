@@ -18,5 +18,4 @@ export interface DadosSimulados {
 export interface dadosTeste {
   item:string;
   cost:any;
-
 }

@@ -1,4 +1,4 @@
-import { Component, Inject,Injectable, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -15,13 +15,12 @@ export class DialogResultComponent implements OnInit {
 
     @Inject(MAT_DIALOG_DATA) public dados: any,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
 
   }
   confirmar() {
     this.router.navigate(['TelaFinalizada']);
-
   }
 }

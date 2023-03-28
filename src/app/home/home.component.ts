@@ -10,7 +10,6 @@ let dadosSimulados: DadosSimulados;
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  url = 'https://calculadoraparcela.herokuapp.com/v2/api-docs';
   public parcelas: any;
 
   onSubmit(form: any) {
@@ -32,8 +31,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private saveSimulacao: Simulacao,
-    private objectSalvo: ObjectSimulado
-  ) {}
+    public objectSalvo: ObjectSimulado
+  ) { }
   @Input() dadosEnviados: DadosSimulados[] = [];
   @Input() nome: string = '';
   @Input() sobrenome: string = '';
@@ -42,7 +41,7 @@ export class HomeComponent implements OnInit {
   @Input() valorTotalParcelas: string = '';
   @Input() quantidadeParcelas: string = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   public simularEmprestimo(form: any) {
     (dadosSimulados = this.saveSimulacao.saveSimulacao(form.value)),

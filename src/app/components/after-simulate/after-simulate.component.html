@@ -34,21 +34,10 @@
     </tfoot>
   </table>
   <div class="button">
-    <mat-checkbox
-      [checked]="checked"
-      class="example-margin"
-      (change)="aceiteTermos()"
-      >Eu li e aceito os termos de uso</mat-checkbox
-    >
-    <a mat-button (click)="openDialog()" target="_blank"
-      >Leia seu termo de compromisso!</a
-    >
-    <button
-      mat-raised-button
-      [disabled]="disabled"
-      color="primary"
-      (click)="popup()"
-    >
+    <mat-checkbox [checked]="checked" class="example-margin" (change)="aceiteTermos()">Eu li e aceito os termos de
+      uso</mat-checkbox>
+    <a mat-button (click)="openDialog()" target="_blank">Leia seu termo de compromisso!</a>
+    <button mat-raised-button [disabled]="disabled" color="primary" (click)="popup()">
       Confirme sua Solicitação
     </button>
   </div>

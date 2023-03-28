@@ -1,7 +1,7 @@
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { calculadoraparcela } from 'src/api/responseSimulate';
+import { calculadoraParcela } from 'src/api/responseSimulate';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class Simulacao {
   }
 
   saveSimulacao(dadosSimulacao: any) {
-    return calculadoraparcela(dadosSimulacao);
+    return calculadoraParcela(dadosSimulacao);
   }
 }
 

@@ -45,7 +45,7 @@ export class AfterSimulateComponent implements OnInit {
     this.valorTotalparcelasRetorno = valorTotalParcelas;
   }
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
 

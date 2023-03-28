@@ -11,14 +11,14 @@ import { ObjectSimulado } from '../services/creditoContratado.sevice';
 export class TelaFinalizadaComponent implements OnInit {
   dadosSimulados: any;
   constructor(
-   private objectSalvo: ObjectSimulado,
-   private router: Router
+    private objectSalvo: ObjectSimulado,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-   this.dadosSimulados = this.objectSalvo.envioObj('', false);
+    this.dadosSimulados = this.objectSalvo.envioObj('', false);
   }
-  popup(){
+  popup() {
     this.router.navigate(['Home']);
   }
 }

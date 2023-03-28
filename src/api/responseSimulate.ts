@@ -1,7 +1,7 @@
 import { DadosSimulacao, DadosSimulados } from "src/app/interfaces/simulacao.interface";
 
 
-export function calculadoraparcela(dadosSimulacao: DadosSimulacao) {
+export function calculadoraParcela(dadosSimulacao: DadosSimulacao) {
 
   let juros = 0
   if (dadosSimulacao.quantidadeParcelas <= 23) { juros = 0.05 }

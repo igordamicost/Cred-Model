@@ -25,59 +25,26 @@
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome</mat-label>
-            <input
-              matInput
-              ngModel
-              type="text"
-              name="nome"
-              placeholder="Digite seu Primeiro Nome"
-            />
+            <input matInput ngModel type="text" name="nome" placeholder="Digite seu Primeiro Nome" />
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Sobrenome</mat-label>
-            <input
-              matInput
-              ngModel
-              name="sobrenome"
-              placeholder="Digite seu Sobrenome"
-            />
+            <input matInput ngModel name="sobrenome" placeholder="Digite seu Sobrenome" />
           </mat-form-field>
 
-          <mat-form-field
-            class="example-full-width"
-            appearance="fill"
-            floatLabel="always"
-          >
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
             <mat-label>Insira o valor que deseja</mat-label>
-            <input
-              matInput
-              ngModel
-              name="valorTotal"
-              min="1000"
-              max="100000"
-              type="number"
-              class="example-right-align"
-              placeholder="Digite o valor que deseja"
-            />
+            <input matInput ngModel name="valorTotal" min="1000" max="100000" type="number" class="example-right-align"
+              placeholder="Digite o valor que deseja" />
             <span matPrefix>R$&nbsp;</span>
           </mat-form-field>
-          <mat-form-field
-            class="example-full-width"
-            appearance="fill"
-            floatLabel="always"
-          >
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
             <mat-label>Insira as parcelas</mat-label>
-            <input
-              matInput
-              ngModel
-              name="quantidadeParcelas"
-              min="12"
-              max="48"
-              type="number"
-              class="example-right-align"
-              placeholder="Insira suas parcelas"
-            />
+            <input matInput ngModel name="quantidadeParcelas" min="12" max="48" type="number"
+              class="example-right-align" />
+            <mat-hint align="end">Quantidade mínima: 12 / Quantidade máxima: 48</mat-hint>
             <span matPrefix>&nbsp;</span>
+            <span matSuffix>meses</span>
           </mat-form-field>
 
           <button mat-raised-button color="primary" type="submit">
@@ -88,15 +55,8 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <app-after-simulate
-    nome={{this.nome}}
-    sobrenome={{this.sobrenome}}
-    valorTotal={{this.valorTotal}}
-    quantidadeParcelas={{this.quantidadeParcelas}}
-    valorParcela={{this.valorParcela}}
-    valorTotalParcelas={{this.valorTotalParcelas}}
-    ngValue="dadosSimulados"
-    *ngIf="simulado"
-    class="simulado"
-  ></app-after-simulate>
+  <app-after-simulate nome={{this.nome}} sobrenome={{this.sobrenome}} valorTotal={{this.valorTotal}}
+    quantidadeParcelas={{this.quantidadeParcelas}} valorParcela={{this.valorParcela}}
+    valorTotalParcelas={{this.valorTotalParcelas}} ngValue="dadosSimulados" *ngIf="simulado"
+    class="simulado"></app-after-simulate>
 </div>
